@@ -16,6 +16,9 @@ You can quickly find information about the word by searching for it. The search 
 
 #### 4) Add a word
 You can add new English words and their descriptions to your vocabulary. This allows you to continue to expand and update your vocabulary.
+<img width="1383" alt="Screenshot 2023-09-01 at 6 02 53 PM" src="https://github.com/gahyeoi/23-2_Practical_Project1/assets/123635231/28817df4-5d4d-4e95-92fa-55eb88234fa4">
+<img width="1381" alt="Screenshot 2023-09-01 at 6 04 06 PM" src="https://github.com/gahyeoi/23-2_Practical_Project1/assets/123635231/bffb6dc3-e126-4ddf-b2e4-45348c66eb9e">
+
 
 #### 5) word modification
 You can update your vocabulary by modifying existing words or descriptions. This helps you maintain and improve accurate information.
