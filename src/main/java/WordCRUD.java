@@ -1,8 +1,13 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class WordCRUD implements ICRUD{
     ArrayList<Word> list ;
     Scanner s;
+    final String fname = "Dictionary.txt";
 
     WordCRUD(Scanner s){
         list = new ArrayList<>();
@@ -42,6 +47,11 @@ public class WordCRUD implements ICRUD{
             System.out.println(list.get(i).toString());
         }
         System.out.println("-------------------------------") ;
+    }
+
+    public void listLevel(){ // (2) 수준별 단어 보기
+        System.out.print("=> 보고 싶은 레벨은? ");
+        int l = s.nextInt();
     }
 
     public ArrayList<Integer> listAll(String keyword){
@@ -98,4 +108,31 @@ public class WordCRUD implements ICRUD{
             System.out.println("취소되었습니다.");
         }
     }
+
+    public void loadFile(){
+        try{
+            BufferedReader br = new BufferedReader(new FileReader(fname));
+            String line;
+            int count = 0;
+
+            while(true){
+                line = br.readLine();
+                if(line == null) break;
+
+                String[] data = line.split("\\|"); // 이렇게 해야 인식이 됨
+                int level = Integer.parseInt(data[0]);
+                String word = data[1];
+                String meaning = data[2];
+
+                list.add(new Word(0, level, word, meaning));
+                count++;
+            }
+            br.close();
+            System.out.println("==> " + count + "개 로딩 완료");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void writeFile(){}
 }
