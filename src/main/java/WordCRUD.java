@@ -45,11 +45,7 @@ public class WordCRUD implements ICRUD{
     }
 
     public ArrayList<Integer> listAll(String keyword){
-<<<<<<< HEAD
-        ArrayList<Integer> idlist = new ArrayList<>();
-=======
         ArrayList<Integer> idList = new ArrayList<>();
->>>>>>> 6a94f1e (fix typos in WordCRUD.java)
         int j = 0 ;
         System.out.println("-------------------------------") ;
         for(int i = 0 ; i < list.size(); i++){
@@ -57,23 +53,18 @@ public class WordCRUD implements ICRUD{
             if(!word.contains(keyword)) continue ;
             System.out.print((j+1) + " ");
             System.out.println(list.get(i).toString());
-<<<<<<< HEAD
-            idlist.add(i);
-=======
             idList.add(i);
->>>>>>> 6a94f1e (fix typos in WordCRUD.java)
             j++;
         }
         System.out.println("-------------------------------") ;
 
-<<<<<<< HEAD
-        return idlist;
-=======
         return idList;
->>>>>>> 6a94f1e (fix typos in WordCRUD.java)
     }
 
     public void searchWord(){ // (3) 단어 검색
+        System.out.print("=> 검색할 단어 입력 : ");
+        String keyword = s.next();
+
     }
     public void addWord(){ // (4) 단어 추가
         Word word = (Word)add();
@@ -83,25 +74,28 @@ public class WordCRUD implements ICRUD{
     public void updateItem(){ // (5) 단어 수정
         System.out.print("=> 수정할 단어 검색 : ");
         String keyword = s.next();
-<<<<<<< HEAD
-        ArrayList<Integer> idlist = this.listAll(keyword);
-=======
         ArrayList<Integer> idList = this.listAll(keyword);
->>>>>>> 6a94f1e (fix typos in WordCRUD.java)
         System.out.print("=> 수정할 번호 선택 : ");
         int id = s.nextInt();
         System.out.print("=> 뜻 입력 : ");
         String meaning = s.nextLine();
-<<<<<<< HEAD
-        Word word = list.get(idlist.get(id-1));
-=======
         Word word = list.get(idList.get(id-1));
->>>>>>> 6a94f1e (fix typos in WordCRUD.java)
         word.setMeaning(meaning);
         System.out.println("단어가 수정되었습니다.");
     }
     public void deleteItem(){ // (6) 단어 삭제
         System.out.print("=> 삭제할 단어 검색 : ");
-        String str = s.next();
+        String keyword = s.next();
+        ArrayList<Integer> idList = this.listAll(keyword);
+        System.out.print("=> 삭제할 번호 선택 : ");
+        int id = s.nextInt();
+        System.out.print("=> 정말로 삭제하실래요? (Y/N) ");
+        String ans = s.next();
+        if(ans.equalsIgnoreCase("Y")){
+            list.remove((int)idList.get(id-1));
+            System.out.println("단어가 삭제되었습니다.");
+        } else{
+            System.out.println("취소되었습니다.");
+        }
     }
 }
