@@ -1,7 +1,4 @@
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class WordCRUD implements ICRUD{
@@ -49,9 +46,21 @@ public class WordCRUD implements ICRUD{
         System.out.println("-------------------------------") ;
     }
 
-    public void listLevel(){ // (2) 수준별 단어 보기
+    public void listAll(int level){ //  (1) 모든 단어 보기
+        System.out.println("-------------------------------") ;
+        for(int i = 0 ; i < list.size(); i++){
+            int ilevel = list.get(i).getLevel();
+            if(ilevel != level) continue;
+            System.out.print(i+1 + " ");
+            System.out.println(list.get(i).toString());
+        }
+        System.out.println("-------------------------------") ;
+    }
+
+    public void searchLevel(){ // (2) 수준별 단어 보기
         System.out.print("=> 보고 싶은 레벨은? ");
         int l = s.nextInt();
+        listAll(l);
     }
 
     public ArrayList<Integer> listAll(String keyword){
@@ -72,8 +81,6 @@ public class WordCRUD implements ICRUD{
     }
 
     public void searchWord(){ // (3) 단어 검색
-        System.out.print("=> 검색할 단어 입력 : ");
-        String keyword = s.next();
 
     }
     public void addWord(){ // (4) 단어 추가
@@ -81,7 +88,7 @@ public class WordCRUD implements ICRUD{
         list.add(word) ;
         System.out.println("새 단어가 단어장에 추가되었습니다.");
     }
-    public void updateItem(){ // (5) 단어 수정
+    public void updateWord(){ // (5) 단어 수정
         System.out.print("=> 수정할 단어 검색 : ");
         String keyword = s.next();
         ArrayList<Integer> idList = this.listAll(keyword);
@@ -93,7 +100,7 @@ public class WordCRUD implements ICRUD{
         word.setMeaning(meaning);
         System.out.println("단어가 수정되었습니다.");
     }
-    public void deleteItem(){ // (6) 단어 삭제
+    public void deleteWord(){ // (6) 단어 삭제
         System.out.print("=> 삭제할 단어 검색 : ");
         String keyword = s.next();
         ArrayList<Integer> idList = this.listAll(keyword);
@@ -134,5 +141,17 @@ public class WordCRUD implements ICRUD{
         }
     }
 
-    public void writeFile(){}
+    public void saveFile(){ // (7) 파일 저장
+        try{
+            PrintWriter pr = new PrintWriter(new FileWriter("test.txt"));
+            for (Word one: list) {
+                pr.write(one.toFileString() + "\n");
+            }
+            pr.close();
+            System.out.println("==> 데이터 저장 완료");
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+
+    }
 }
