@@ -81,7 +81,9 @@ public class WordCRUD implements ICRUD{
     }
 
     public void searchWord(){ // (3) 단어 검색
-
+        System.out.print("=> 검색할 단어 입력 : ");
+        String keyword = s.next();
+        listAll(keyword);
     }
     public void addWord(){ // (4) 단어 추가
         Word word = (Word)add();
