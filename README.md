@@ -2,8 +2,7 @@
 project1 (영어 단어장 프로그램)
 
 ### Project Overview  
-이 프로젝트는 2023-2 실전프로젝트1 과제의 일환으로, 영어 단어장 데이터베이스를 작성하고 관리하는 소프트웨어를 개발하는 것을 목표로 합니다.  
-이 영어 단어장 프로그램은 사용자가 영어 단어와 그에 대한 한국어 뜻을 저장하고 관리할 수 있는 기능을 제공합니다.
+이 프로젝트는 2023-2 실전프로젝트1 과제의 일환으로, 영어 단어장 데이터베이스를 작성하고 관리하는 소프트웨어를 개발하는 것을 목표로 합니다. 이 영어 단어장 프로그램은 사용자가 영어 단어와 그에 대한 한국어 뜻을 저장하고 관리할 수 있는 기능을 제공합니다.
 
 ### Function
 #### 1)모든 단어 보기
@@ -33,8 +32,11 @@ project1 (영어 단어장 프로그램)
 ![image](https://github.com/gahyeoi/23-2_Practical_Project1/assets/123635231/c1fbce54-0b5b-405a-aba8-73461396761f)
 ![image](https://github.com/gahyeoi/23-2_Practical_Project1/assets/123635231/e941079a-0d75-427d-9b40-7656751938f2)
 
-#### 7) Save to File
+#### 7)파일 저장
 사용자가 현재의 데이터베이스 상태를 파일로 저장할 수 있는 기능입니다. 
 ![image](https://github.com/gahyeoi/23-2_Practical_Project1/assets/123635231/e1cd9920-1ebf-4d31-be23-d3f47efe2439)
 ![image](https://github.com/gahyeoi/23-2_Practical_Project1/assets/123635231/6eb8c08d-d15b-4c11-80ac-4fc50194fd1f)
 위 이미지는 파일로 저장된 test.txt의 내용입니다. 
+
+#### 8)단어 퀴즈
+사용자의 데이터베이스에 등록된 단어 중 하나를 사용자에게 보여주는 기능입니다. 사용자에게 단어의 뜻을 보여주고, 사용자가 뜻에 맞는 단어를 정확히 입력하면 정답임을 알려줍니다.
