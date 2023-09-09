@@ -40,7 +40,7 @@ public class WordManager {
                 case 6 -> wordCRUD.deleteWord();
                 case 7 -> wordCRUD.saveFile();
                 case 8 -> wordCRUD.wordQuiz();
-                default -> System.out.println("0~7 사이 메뉴를 입력해주세요");
+                default -> System.out.println("0~8 사이 메뉴를 입력해주세요");
             }
         }
     }
