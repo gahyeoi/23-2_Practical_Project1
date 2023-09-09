@@ -33,12 +33,11 @@ project1 (영어 단어장 프로그램)
 ![image](https://github.com/gahyeoi/23-2_Practical_Project1/assets/123635231/e941079a-0d75-427d-9b40-7656751938f2)
 
 #### 7)파일 저장
-사용자가 현재의 데이터베이스 상태를 파일로 저장할 수 있는 기능입니다. 
+사용자가 현재의 데이터베이스 상태를 txt 파일 형식으로 저장할 수 있습니다. 이를 통해 데이터베이스의 정보를 영구적으로 보존하고 나중에 필요한 경우 다시 불러올 수 있습니다.
 ![image](https://github.com/gahyeoi/23-2_Practical_Project1/assets/123635231/e1cd9920-1ebf-4d31-be23-d3f47efe2439)
-![image](https://github.com/gahyeoi/23-2_Practical_Project1/assets/123635231/6eb8c08d-d15b-4c11-80ac-4fc50194fd1f)
 위 이미지는 파일로 저장된 test.txt의 내용입니다. 
 
 #### 8)단어 퀴즈
-사용자의 데이터베이스에 등록된 단어 중 하나를 사용자에게 보여주는 기능입니다. 사용자에게 단어의 뜻을 보여주고, 사용자가 뜻에 맞는 단어를 정확히 입력하면 정답임을 알려줍니다.
+사용자의 데이터베이스에 등록된 단어 중 하나를 무작위로 선택하여 사용자에게 제시합니다. 사용자는 선택된 단어의 뜻을 확인하고, 그 뜻에 해당하는 정확한 단어를 입력하면 정답으로 인정됩니다.
 ![image](https://github.com/gahyeoi/23-2_Practical_Project1/assets/123635231/9c9e1077-d4e8-4e1a-b94c-bd6f5679a4a9)
 
