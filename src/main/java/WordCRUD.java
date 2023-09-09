@@ -1,6 +1,8 @@
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Random;
+
 public class WordCRUD implements ICRUD{
     ArrayList<Word> list ;
     Scanner s;
@@ -155,6 +157,26 @@ public class WordCRUD implements ICRUD{
         } catch (IOException e){
             e.printStackTrace();
         }
+    }
 
+    public void wordQuiz(){ // (8) 단어 퀴즈
+        System.out.println("단어 퀴즈를 시작하겠습니다.");
+
+        // 랜덤 단어 추출을 위한 난수 만들기
+        int nums = list.size();
+        Random rand = new Random();
+        long seed = System.currentTimeMillis();
+        int index = rand.nextInt(nums);
+
+        // 뜻 보여주기
+        String meaning = list.get(index).getMeaning();
+        System.out.print(meaning + " 의 뜻을 가진 영어 단어는 무엇인가요? => ");
+        String word = s.next();
+        if(word.equalsIgnoreCase(list.get(index).getWord())){
+            System.out.println("정답입니다!");
+        } else {
+            System.out.println("아쉽지만 틀렸습니다!");
+        }
+        System.out.println(list.get(index).getWord() + " | " + meaning);
     }
 }
